@@ -3,8 +3,8 @@
 let argv = require('minimist')(process.argv.slice(2))
 const path = require('path')
 const readDir = require('readDirp')
-const CompileHTML = require('../src/compile-html')
-const processArgv = require('./process-argv-html')
+const { CompileHTML } = require('../src/compile-html')
+const { processArgv } = require('./util')
 
 const locals = processArgv(argv)
 

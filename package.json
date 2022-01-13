@@ -4,21 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tape test/**/*.js",
     "scss:watch": "sass --watch scss:dist/styles",
     "scss:build": "sass scss/events.scss dist/styles/events.css",
     "serve": "serve dist",
     "html:build:local": "./bin/build-html",
     "html:build:cloud": "./bin/build-html --cloud",
-    "deploy": "rm-wh deploy-static localist.risd.systems --staticFolder=dist"
+    "build:local": "npm run html:build:local && npm run scss:build",
+    "deploy": "npm run html:build:cloud && npm run scss:build && ./bin/deploy"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "chokidar": "^3.5.2",
-    "rm-webhook": "^3.0.1",
+    "gcloud-site-dir": "^2.0.3",
     "sass": "^1.47.0",
-    "serve": "^13.0.2"
+    "serve": "^13.0.2",
+    "tape": "^5.4.0"
   },
   "dependencies": {
     "git-state": "^4.1.0",

@@ -1,14 +1,21 @@
 const domain = 'localist.risd.systems'
 
+const branchDomain = () => {
+  return makeBranchBasedSiteName(domain, gitBranch())
+}
+
+module.exports.branchDomain = branchDomain
+
 const processArgv = (argv) => {
   return {
     'site_url': argv.cloud
-      ? `https://${ makeBranchBasedSiteName(domain, gitBranch()) }` 
+      ? `https://${ branchDomain() }` 
       : '.',
   }
 }
 
-module.exports = processArgv
+module.exports.processArgv = processArgv
+
 
 function gitBranch () {
   try {

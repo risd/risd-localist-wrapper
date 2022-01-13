@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+let argv = require('minimist')(process.argv.slice(2))
+const siteDir = require('gcloud-site-dir')
+const { branchDomain } = require('./util')
+
+const deployOptions = {
+  keyFile: '~/.risdmedia/gcloud.json',
+  directory: 'dist',
+  siteName: branchDomain(),
+  ...argv
+}
+
+siteDir(deployOptions, (error) => {
+  if (error) {
+    console.log(error)
+    return process.exit(1)
+  }
+  process.exit(0)
+})
