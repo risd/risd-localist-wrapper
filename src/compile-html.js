@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-module.exports = class CompileHTML {
+class CompileHTML {
   constructor ({ sourceDirectory, targetDirectory }) {
     this.sourceDirectory = sourceDirectory
     this.targetDirectory = targetDirectory
@@ -12,9 +12,13 @@ module.exports = class CompileHTML {
       const regex = new RegExp(`{{ ${key} }}`, 'g')
       source = source.replace(regex, locals[key])
     }
-    return writeFile (path.join(this.targetDirectory, filePath), source)
+    const target = path.join(this.targetDirectory, filePath)
+    const targetDirectory = path.dirname(target)
+    await mkdirp(targetDirectory)
+    return writeFile (target, source)
   }
 }
+module.exports.CompileHTML = CompileHTML
 
 async function readFile (filePath) {
   return new Promise((resolve, reject) => {
@@ -24,6 +28,7 @@ async function readFile (filePath) {
     })
   })
 }
+module.exports.readFile = readFile
 
 async function writeFile (filePath, contents) {
   return new Promise((resolve, reject) => {
@@ -33,3 +38,14 @@ async function writeFile (filePath, contents) {
     })
   })
 }
+module.exports.writeFile = writeFile
+
+async function mkdirp (directory) {
+  return new Promise((resolve, reject) => {
+    fs.mkdir(directory, { recursive: true }, (error) => {
+      if (error) return reject(error)
+      resolve()
+    })
+  })
+}
+module.exports.mkdirp = mkdirp
