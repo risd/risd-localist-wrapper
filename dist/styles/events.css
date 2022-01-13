@@ -1,0 +1,138 @@
+#menu a {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+a {
+  transition: none !important;
+}
+
+abbr[title] {
+  text-decoration: none !important;
+}
+
+.primary-nav__logo a {
+  color: white;
+}
+
+button.primary-nav__search-button {
+  color: white;
+  background-color: transparent;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0;
+  border-right-color: white;
+  border-radius: 0;
+}
+button.primary-nav__search-button:hover {
+  color: white;
+}
+
+.primary-nav__hamburger button {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+button.primary-nav__link-toggle {
+  background-color: transparent;
+  color: black;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  border: 0;
+}
+button.primary-nav__link-toggle:hover {
+  background-color: inherit;
+  color: inherit;
+}
+
+button.primary-nav__back {
+  color: black;
+  font-size: inherit;
+  line-height: inherit;
+}
+button.primary-nav__back:hover {
+  color: inherit;
+}
+
+.primary-nav__search #edit-search-site,
+.primary-nav__search #edit-actions-submit {
+  border: 1px solid white;
+}
+
+.primary-nav__search #edit-search-site {
+  margin-bottom: 0;
+  padding: 0;
+  line-height: inherit;
+}
+
+.global-header .utility-nav h4 {
+  line-height: inherit;
+}
+
+#block-risd-main-theme-content {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 513px) {
+  #block-risd-main-theme-content {
+    max-width: 1152px;
+  }
+}
+
+#menu {
+  margin: 0 15px 30px;
+}
+
+#menu a {
+  font-weight: bold;
+}
+
+#x-me-menu::before {
+  content: "Menu";
+}
+
+#x-me-menu img {
+  display: none;
+}
+
+#x-me-menu .fa-chevron-down {
+  vertical-align: top;
+  padding-top: 4px;
+}
+
+.search_action {
+  display: none;
+}
+
+h3.summary {
+  font-weight: bold;
+}
+
+.page_link {
+  margin-bottom: 15px;
+}
+
+.minicalendar_component {
+  line-height: 1.4;
+}
+.minicalendar_component .pagination_container {
+  line-height: 50px;
+}
+
+#lclst_footer {
+  display: none;
+}
+
+form sup.required {
+  background-color: red;
+}
+
+#x-need-name,
+#x-need-description,
+#x-need-custom_fields_add_to_calendar_at_graduatestudyrisdedu {
+  color: red;
+}
+
+/*# sourceMappingURL=events.css.map */

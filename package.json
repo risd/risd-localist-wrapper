@@ -1,0 +1,28 @@
+{
+  "name": "risd-localist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss:watch": "sass --watch scss:dist/styles",
+    "scss:build": "sass scss/events.scss dist/styles/events.css",
+    "serve": "serve dist",
+    "html:build:local": "./bin/build-html",
+    "html:build:cloud": "./bin/build-html --cloud",
+    "deploy": "rm-wh deploy-static localist.risd.systems --staticFolder=dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chokidar": "^3.5.2",
+    "rm-webhook": "^3.0.1",
+    "sass": "^1.47.0",
+    "serve": "^13.0.2"
+  },
+  "dependencies": {
+    "git-state": "^4.1.0",
+    "minimist": "^1.2.5",
+    "readdirp": "^3.6.0"
+  }
+}

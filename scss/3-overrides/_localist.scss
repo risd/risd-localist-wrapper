@@ -1,0 +1,149 @@
+%small-caps {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+a {
+  transition: none !important;
+}
+
+abbr[title] {
+  text-decoration: none !important;
+}
+
+// Add overrides for global nav
+.primary-nav__logo a {
+  color: white;
+}
+
+button.primary-nav__search-button {
+  color: white;
+  background-color: transparent;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0;
+  border-right-color: white;
+  border-radius: 0;
+
+  &:hover {
+    color: white;
+  }
+}
+.primary-nav__hamburger button {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+button.primary-nav__link-toggle {
+  background-color: transparent;
+  color: black;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  border: 0;
+
+  &:hover {
+    background-color: inherit;
+    color: inherit;
+  }
+}
+
+button.primary-nav__back {
+  color: black;
+  font-size: inherit;
+  line-height: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.primary-nav__search #edit-search-site,
+.primary-nav__search #edit-actions-submit {
+  border: 1px solid white;
+}
+
+.primary-nav__search #edit-search-site {
+  margin-bottom: 0;
+  padding: 0;
+  line-height: inherit;
+}
+
+.global-header .utility-nav h4 {
+  line-height: inherit;
+}
+
+// Add max-width to page container
+#block-risd-main-theme-content {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include respond-above(small) {
+    max-width: 1152px;
+  }
+}
+
+// Adjust menu margins
+#menu {
+  margin: 0 15px 30px;
+}
+
+// Adjust menu link text styling
+#menu a {
+  @extend %small-caps;
+  font-weight: bold;
+}
+
+// Replace profile icon with "Menu" label
+#x-me-menu::before {
+  content: "Menu";
+}
+#x-me-menu img {
+  display: none;
+}
+#x-me-menu .fa-chevron-down {
+  vertical-align: top;
+  padding-top: 4px;
+}
+
+// Hide search bar
+.search_action {
+  display: none;
+}
+
+// Bold titles
+h3.summary {
+  font-weight: bold;
+}
+
+// Add space below "view more" link
+.page_link {
+  margin-bottom: 15px;
+}
+
+// Fix mini calendar line heights
+.minicalendar_component {
+  line-height: 1.4;
+
+  .pagination_container {
+    line-height: 50px;
+  }
+}
+
+// Hide Localist promo footer
+#lclst_footer {
+  display: none;
+}
+
+// Create page `required` label styles
+form sup.required {
+  background-color: red;
+
+}
+
+#x-need-name,
+#x-need-description,
+#x-need-custom_fields_add_to_calendar_at_graduatestudyrisdedu {
+  color: red;
+}

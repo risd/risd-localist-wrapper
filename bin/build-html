@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+let argv = require('minimist')(process.argv.slice(2))
+const path = require('path')
+const readDir = require('readDirp')
+const CompileHTML = require('../src/compile-html')
+const processArgv = require('./process-argv-html')
+
+const locals = processArgv(argv)
+
+const sourceDirectory = path.join(process.cwd(), 'html')
+
+const compileOptions = {
+  sourceDirectory,
+  targetDirectory: path.join(process.cwd(), 'dist'),
+}
+
+const html = new CompileHTML(compileOptions)
+
+;(async function build () {
+  for await (const entry of readDir(sourceDirectory)) {
+    await html.compile({
+      filePath: entry.path,
+      locals,
+    })
+  }
+})()
